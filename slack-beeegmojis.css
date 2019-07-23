@@ -1,0 +1,9 @@
+img.c-emoji__small {
+    height: 48px !important;
+    width: 48px !important;
+}
+
+img.c-emoji__large {
+    height: 64px !important;
+    width: 64px !important;
+}
