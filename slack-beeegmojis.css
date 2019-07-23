@@ -7,3 +7,14 @@ img.c-emoji__large {
     height: 64px !important;
     width: 64px !important;
 }
+
+.c-emoji__medium {
+    height: 48px !important;
+    width: 48px !important;
+}
+
+.c-emoji--inline.c-emoji__medium img {
+    height: 48px !important;
+    width: 48px !important;
+    margin-top: -24px !important;
+}
