@@ -1,30 +1,55 @@
+/* Emoji reacts */
 img.c-emoji__small {
     height: 48px !important;
     width: 48px !important;
 }
 
+/* Jumbo emojis */
 img.c-emoji__large {
     height: 64px !important;
     width: 64px !important;
 }
 
-.c-emoji__medium {
+/* Inline message emojis */
+.c-message__body .c-emoji__medium {
+    height: 48px !important;
+    width: 48px !important;
+}
+.c-emoji__medium img {
+    height: 48px !important;
+    width: 48px !important;
+    margin-top: -24px !important
+}
+span.c-emoji__medium {
     height: 48px !important;
     width: 48px !important;
 }
 
-.c-emoji--inline.c-emoji__medium img {
-    height: 48px !important;
-    width: 48px !important;
-    margin-top: -24px !important;
-}
-
-span.c-custom_status {
-    margin-right: 16px !important;
-}
-
+/* Status custom emojis */
 .c-custom_status img {
     width: 32px !important;
     height: 32px !important;
     margin-top: -16px !important;
+}
+.c-custom_status .c-emoji__small {
+    width: 32px !important
+}
+
+/* Send message custom status emojis*/
+.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium {
+    width: 32px !important;
+}
+.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium img {
+    width: 32px !important;
+    height: 32px !important;
+    margin-top: -16px !important;
+}
+
+.c-emoji--inline.c-emoji__small img {
+    height: 32px !important;
+    width: 32px !important;
+    margin-top: -16px !important;
+}
+.c-emoji__small {
+    width: 32px !important;
 }
