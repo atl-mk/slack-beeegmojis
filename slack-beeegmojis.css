@@ -1,28 +1,28 @@
 /* Emoji reacts */
 img.c-emoji__small {
-    height: 48px !important;
-    width: 48px !important;
-}
-
-/* Jumbo emojis */
-img.c-emoji__large {
     height: 64px !important;
     width: 64px !important;
 }
 
+/* Jumbo emojis */
+img.c-emoji__large {
+    height: 128px !important;
+    width: 128px !important;
+}
+
 /* Inline message emojis */
 .c-message__body .c-emoji__medium {
-    height: 48px !important;
-    width: 48px !important;
+    height: 64px !important;
+    width: 64px !important;
 }
 .c-emoji__medium img {
-    height: 48px !important;
-    width: 48px !important;
-    margin-top: -24px !important
+    height: 64px !important;
+    width: 64px !important;
+    margin-top: -32px !important
 }
 span.c-emoji__medium {
-    height: 48px !important;
-    width: 48px !important;
+    height: 64px !important;
+    width: 64px !important;
 }
 
 /* Status custom emojis */
