@@ -1,0 +1,93 @@
+/* Emoji reacts */
+img.c-emoji__small {
+    height: 48px !important;
+    width: 48px !important;
+}
+
+/* Jumbo emojis */
+.c-message__body img.c-emoji__large {
+    height: 64px !important;
+    width: 64px !important;
+}
+
+/* Status custom emojis */
+.c-custom_status .c-emoji--inline img {
+    height: 26px !important;
+    width: 26px !important;
+}
+.c-message__sender .c-custom_status .c-emoji--inline img {
+    margin-top: -16px !important;
+}
+.p-channel_sidebar__name .c-custom_status .c-emoji--inline img {
+    margin-top: -13px !important;
+}
+.c-custom_status .c-emoji--inline {
+    width: 26px !important;
+}
+.p-classic_nav__model__title__name__status--im .c-emoji--inline {
+    height: 25px !important;
+    width: 28px !important;
+}
+.p-classic_nav__model__title__name__status--im .c-emoji--inline img {
+    height: 28px !important;
+    width: 28px !important;
+    margin-top: -15px !important;
+}
+.c-custom_status__tooltip .c-emoji--inline, .p-member_profile_field__value .c-custom_status--inline .c-emoji--inline {
+    height: 48px !important;
+    width: 48px !important;
+}
+.c-custom_status__tooltip .c-emoji--inline img, .p-member_profile_field__value .c-custom_status--inline .c-emoji--inline img {
+    height: 48px !important;
+    width: 48px !important;
+    margin-top: -24px !important;
+}
+.c-custom_status__tooltip, .c-custom_status {
+    vertical-align: bottom !important;
+}
+.c-tooltip__tip {
+    max-width: 1000px !important;
+}
+
+
+/* Inline message emojis */
+.c-message__body .c-emoji__medium {
+    height: 48px !important;
+    width: 48px !important;
+}
+.c-message__body .c-emoji__medium img {
+    height: 48px !important;
+    width: 48px !important;
+    margin-top: -24px !important;
+}
+
+/* Send message custom status emojis*/
+.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium {
+    width: 32px !important;
+    height: 32px !important;
+}
+.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium img {
+    width: 32px !important;
+    height: 32px !important;
+}
+.p-workspace__input div.ql-editor, .p-workspace__input div.c-texty_input__placeholder {
+    line-height: 2.13335 !important;
+}
+.p-workspace__input .p-message_input_file_button {
+    height: 44px !important;
+}
+.p-workspace__message_pane_send {
+    height: 52px !important;
+}
+.p-workspace__input .p-message_input_field .ql-buttons {
+    bottom: 13px !important;
+}
+.p-workspace__input i.c-icon--paperclip {
+    padding-top: 2px !important;
+}
+
+/* Draft message emojis */
+.c-texty_input .ql-editor img.emoji {
+    height: 32px !important;
+    width: 32px !Important;
+}
