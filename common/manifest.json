@@ -1,6 +1,6 @@
   {
     "name": "Slack Beeegmojis",
-    "version": "0.4.6",
+    "version": "0.4.7",
     "description": "Makes emojis in Slack bigger so you can actually appreciate them.",
     "manifest_version": 2,
     "permissions": ["tabs", "*://*.slack.com/*"],
