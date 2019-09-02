@@ -61,6 +61,17 @@ img.c-emoji__small {
     margin-top: -32px !important;
 }
 
+/* Inline thread message emojis */
+.c-message_kit__text .c-emoji__medium {
+    height: 64px !important;
+    width: 64px !important;
+}
+.c-message_kit__text .c-emoji__medium img {
+    height: 64px !important;
+    width: 64px !important;
+    margin-top: -32px !important;
+}
+
 /* Send message custom status emojis*/
 .c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium {
     width: 32px !important;
