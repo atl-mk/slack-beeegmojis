@@ -49,13 +49,22 @@ img.c-emoji__small {
     max-width: 1000px !important;
 }
 
-
 /* Inline message emojis */
 .c-message__body .c-emoji__medium {
     height: 48px !important;
     width: 48px !important;
 }
 .c-message__body .c-emoji__medium img {
+    height: 48px !important;
+    width: 48px !important;
+    margin-top: -24px !important;
+}
+/* Inline thread message emojis */
+.c-message_kit__text .c-emoji__medium {
+    height: 48px !important;
+    width: 48px !important;
+}
+.c-message_kit__text .c-emoji__medium img {
     height: 48px !important;
     width: 48px !important;
     margin-top: -24px !important;
