@@ -9,6 +9,10 @@ img.c-emoji__small {
     height: 128px !important;
     width: 128px !important;
 }
+.c-message_kit__thread img.c-emoji__large {
+    height: 128px !important;
+    width: 128px !important;
+}
 
 /* Status custom emojis */
 .c-custom_status .c-emoji--inline img {
