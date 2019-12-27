@@ -30,7 +30,7 @@ fi
 
 
 echo "${INFO}Making sure that NPM is installed"
-if ! npm version; then
+if ! npm version > /dev/null; then
     if [[ $OSTYPE == *"linux"* ]]; then
         echo "${ERROR}NodeJS not found, please install it"
 
@@ -62,7 +62,7 @@ fi
 
 if [ -f "${SLACK_DIR}${APP_ASAR}" ]; then
     echo "${INFO}Slack update found"
-    mv "${SLACK_DIR}${APP_ASAR}" "${SLACK_DIR}${APP_ASAR_BAK}"
+    yes | mv "${SLACK_DIR}${APP_ASAR}" "${SLACK_DIR}${APP_ASAR_BAK}"
 fi
 
 echo "${INFO}Unpacking Slack app"
