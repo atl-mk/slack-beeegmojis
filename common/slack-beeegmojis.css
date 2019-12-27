@@ -5,13 +5,20 @@ img.c-emoji__small {
 }
 
 /* Jumbo emojis */
-.c-message__body img.c-emoji__large {
+img.c-emoji.c-emoji__large {
     height: 128px !important;
     width: 128px !important;
 }
-.c-message_kit__thread img.c-emoji__large {
-    height: 128px !important;
-    width: 128px !important;
+
+/* Inline message emojis */
+span.c-emoji__medium {
+    height: 64px !important;
+    width: 64px !important;
+}
+span.c-emoji__medium img {
+    height: 64px !important;
+    width: 64px !important;
+    margin-top: -32px !important;
 }
 
 /* Status custom emojis */
@@ -51,18 +58,6 @@ img.c-emoji__small {
 }
 .c-tooltip__tip {
     max-width: 1000px !important;
-}
-
-
-/* Inline message emojis */
-.c-message__body .c-emoji__medium {
-    height: 64px !important;
-    width: 64px !important;
-}
-.c-message__body .c-emoji__medium img {
-    height: 64px !important;
-    width: 64px !important;
-    margin-top: -32px !important;
 }
 
 /* Inline thread message emojis */
