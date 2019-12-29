@@ -8,17 +8,17 @@ update
 ## Testing notes
 
 ### Places to check
-Sidebar threads
-Threads screen
-Channel screen
-Emoji picker (including hover preview)
-People preview in sidebar
-Search preview
-Jump preview
-Person popup
-Status hover popup
+* Sidebar threads
+* Threads screen
+* Channel screen
+* Emoji picker (including hover preview)
+* People preview in sidebar
+* Search preview
+* Jump preview
+* Person popup
+* Status hover popup
 
 ### Things to check
-Peoples' statuses
-Send message box for emoji
-All text entry points
+* Peoples' statuses
+* Send message box for emoji
+* All text entry points
