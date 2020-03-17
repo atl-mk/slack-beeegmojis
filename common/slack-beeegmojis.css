@@ -5,7 +5,7 @@ img.c-emoji__small {
 }
 
 /* Jumbo emojis */
-img.c-emoji.c-emoji__large {
+.c-message_kit__gutter__right img.c-emoji.c-emoji__large {
     height: 128px !important;
     width: 128px !important;
 }
