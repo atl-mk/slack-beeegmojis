@@ -9,6 +9,11 @@ APP_ASAR_BAK="app.asar.bak"
 INJECTION_VICTIM="${APP}/dist/main-preload-entry-point.bundle.js"
 SCRIPT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 
+if [ -z "$1" ]; then
+    STYLES_FILE="${SCRIPT_DIR}/common/slack-beeegmojis.css"
+else
+    STYLES_FILE="$1"
+fi
 
 
 echo "${INFO}Figuring out where Slack is installed"
@@ -81,7 +86,7 @@ fi
 
 
 cat "${SCRIPT_DIR}/electron-hack/1.txt" >> "${SLACK_DIR}${INJECTION_VICTIM}"
-cat "${SCRIPT_DIR}/common/slack-beeegmojis.css" >> "${SLACK_DIR}${INJECTION_VICTIM}"
+cat "${STYLES_FILE}" >> "${SLACK_DIR}${INJECTION_VICTIM}"
 cat "${SCRIPT_DIR}/electron-hack/2.txt" >> "${SLACK_DIR}${INJECTION_VICTIM}"
 
 echo "${INFO}Done, have fun!"
