@@ -9,6 +9,6 @@ https://chrome.google.com/webstore/detail/slack-beeegmojis/hggahljepmkkbfbgfddld
 
 https://addons.mozilla.org/en-US/firefox/addon/slack-beeegmojis/
 
-If you want to use the BEEG version OR if you're not an Atlassian employee then you'll need to add an unpacked extension ATM.
+If you want to use the BEEG version OR if you use chrome, but are not an Atlassian employee then you'll need to add an unpacked extension.
 ## Contributions
 Raise a PR
