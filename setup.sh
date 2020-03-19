@@ -38,10 +38,10 @@ echo "${INFO}Making sure that NPM is installed"
 if ! npm version > /dev/null; then
     if [[ $OSTYPE == *"linux"* ]]; then
         echo "${ERROR}NodeJS not found, please install it"
+        exit 4
 
     elif [[ $OSTYPE == *"darwin"* ]]; then
         read -p "${WARNING}NodeJS not found, is it alright to install it? [y/n] " -n 1 -r
-        echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             echo "${WARNING}NodeJS not found, checking if Homebrew is installed"
 
