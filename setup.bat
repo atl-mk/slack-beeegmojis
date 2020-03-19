@@ -63,7 +63,7 @@ call npx asar extract %SLACK_DIR%%APP_ASAR% %SLACK_DIR%%APP%
 if ERRORLEVEL 0 (
     title %SCRIPT_TITLE%
     echo %INFO%Backing up packaged Slack
-    copy /b/v/y %SLACK_DIR%%APP_ASAR% %SLACK_DIR%%APP_ASAR_BAK%
+    move %SLACK_DIR%%APP_ASAR% %SLACK_DIR%%APP_ASAR_BAK%
 ) else (
     echo %ERROR%Extracting Slack app failed, cleaning up
     RD /S /Q %SLACK_DIR%%APP%
