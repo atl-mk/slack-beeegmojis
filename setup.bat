@@ -24,6 +24,12 @@ set SCRIPT_DIR=%~dp0
 set SLACK_DIR=%APPDATA%\..\Local\slack\app-%SLACK_VERSION%\resources\
 
 
+tasklist /FI "IMAGENAME eq slack.exe" 2>NUL | find /I /N "slack.exe">NUL
+if "%ERRORLEVEL%"=="0" (
+    echo %ERROR% Slack is still running, please close it
+    exit 7
+)
+
 if "%~1"=="" ( set STYLES_FILE=%SCRIPT_DIR%common\slack-beeegmojis.css ) else ( set STYLES_FILE=%1 )
 
 
@@ -50,11 +56,6 @@ if exist %SLACK_DIR%%APP% (
     RD /S /Q %SLACK_DIR%%APP%
 )
 
-if exist %SLACK_DIR%%APP_ASAR% (
-    echo %INFO%Slack update found
-    move %SLACK_DIR%%APP_ASAR% %SLACK_DIR%%APP_ASAR_BAK%
-)
-
 echo %INFO%Unpacking Slack app
 if exist %SLACK_DIR%%APP_ASAR_BAK% (
     move %SLACK_DIR%%APP_ASAR_BAK% %SLACK_DIR%%APP_ASAR%
@@ -63,7 +64,7 @@ call npx asar extract %SLACK_DIR%%APP_ASAR% %SLACK_DIR%%APP%
 if ERRORLEVEL 0 (
     title %SCRIPT_TITLE%
     echo %INFO%Backing up packaged Slack
-    copy /b/v/y %SLACK_DIR%%APP_ASAR% %SLACK_DIR%%APP_ASAR_BAK%
+    move %SLACK_DIR%%APP_ASAR% %SLACK_DIR%%APP_ASAR_BAK%
 ) else (
     echo %ERROR%Extracting Slack app failed, cleaning up
     RD /S /Q %SLACK_DIR%%APP%
