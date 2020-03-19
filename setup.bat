@@ -50,11 +50,6 @@ if exist %SLACK_DIR%%APP% (
     RD /S /Q %SLACK_DIR%%APP%
 )
 
-if exist %SLACK_DIR%%APP_ASAR% (
-    echo %INFO%Slack update found
-    move %SLACK_DIR%%APP_ASAR% %SLACK_DIR%%APP_ASAR_BAK%
-)
-
 echo %INFO%Unpacking Slack app
 if exist %SLACK_DIR%%APP_ASAR_BAK% (
     move %SLACK_DIR%%APP_ASAR_BAK% %SLACK_DIR%%APP_ASAR%
