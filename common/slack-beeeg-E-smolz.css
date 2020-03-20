@@ -80,21 +80,6 @@ span.c-emoji__medium img {
     width: 32px !important;
     height: 32px !important;
 }
-.p-workspace__input div.ql-editor, .p-workspace__input div.c-texty_input__placeholder {
-    line-height: 2.13335 !important;
-}
-.p-workspace__input .p-message_input_file_button {
-    height: 44px !important;
-}
-.p-workspace__message_pane_send {
-    height: 52px !important;
-}
-.p-workspace__input .p-message_input_field .ql-buttons {
-    bottom: 13px !important;
-}
-.p-workspace__input i.c-icon--paperclip {
-    padding-top: 2px !important;
-}
 
 /* Draft message emojis */
 .c-texty_input .ql-editor img.emoji {
