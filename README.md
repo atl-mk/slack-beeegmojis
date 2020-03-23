@@ -11,6 +11,6 @@ https://addons.mozilla.org/en-US/firefox/addon/slack-beeegmojis/
 
 https://microsoftedge.microsoft.com/addons/detail/dmeboaaoabeepmjadgaokkmkgoakkdib
 
-If you want to use the BEEG version OR if you use chrome, but are not an Atlassian employee then you'll need to add an unpacked extension.
+If you want to use the BEEEEEG version OR if you use chrome, but are not an Atlassian employee then you'll need to add an unpacked extension.
 ## Contributions
 Raise a PR
