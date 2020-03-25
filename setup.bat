@@ -19,7 +19,7 @@ set "ERROR=[ERROR] BEEEGMOJIS: "
 set APP=app
 set APP_ASAR=app.asar
 set APP_ASAR_BAK=app.asar.bak
-set INJECTION_VICTIM=%APP%\dist\main-preload-entry-point.bundle.js
+set INJECTION_VICTIM=%APP%\dist\preload.bundle.js
 set SCRIPT_DIR=%~dp0
 set SLACK_DIR=%APPDATA%\..\Local\slack\app-%SLACK_VERSION%\resources\
 

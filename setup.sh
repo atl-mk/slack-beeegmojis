@@ -6,7 +6,7 @@ ERROR="[ERROR] BEEEGMOJIS: "
 APP="app"
 APP_ASAR="app.asar"
 APP_ASAR_BAK="app.asar.bak"
-INJECTION_VICTIM="${APP}/dist/main-preload-entry-point.bundle.js"
+INJECTION_VICTIM="${APP}/dist/preload.bundle.js"
 SCRIPT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 
 if [ -z "$1" ]; then
