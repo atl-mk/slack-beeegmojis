@@ -11,7 +11,7 @@
 }
 
 /* Inline message emojis */
-span.c-emoji__medium{
+span.c-emoji__medium {
     height: 48px !important;
     width: 48px !important;
 }
