@@ -1,5 +1,5 @@
-/* Emoji reacts */
-img.c-emoji__small {
+/* Emoji message reactions */
+.c-reaction img.c-emoji__small {
     height: 64px !important;
     width: 64px !important;
 }
