@@ -75,3 +75,13 @@ span.c-emoji__medium img {
     height: 32px !important;
     width: 32px !Important;
 }
+
+/* Sidebar channel section label */
+.p-channel_sidebar__section_heading .c-emoji img {
+    height: 22px !important;
+    width: 22px !important;
+    margin-top: -11px !important;
+}
+.p-channel_sidebar__section_heading span.c-emoji {
+    width: 22px !important;
+}
