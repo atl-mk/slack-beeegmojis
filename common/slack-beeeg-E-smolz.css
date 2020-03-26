@@ -86,6 +86,16 @@ span.c-emoji__medium img {
     width: 22px !important;
 }
 
+/* Channel section selection dropdown label */
+.p-inline_channel_section .c-emoji img {
+    height: 22px !important;
+    width: 22px !important;
+    margin-top: -11px !important;
+}
+.p-inline_channel_section span.c-emoji {
+    width: 22px !important;
+}
+
 /* Send message box emoji picker items emojis */
 .p-emoji_picker__list_item img.c-emoji__medium {
     width: 28px;
