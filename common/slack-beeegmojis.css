@@ -72,6 +72,6 @@ span.c-emoji__medium img {
 
 /* Draft message emojis */
 .c-texty_input .ql-editor img.emoji {
-    height: 32px !important;
-    width: 32px !Important;
+    height: 48px !important;
+    width: 48px !Important;
 }
