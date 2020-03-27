@@ -11,48 +11,56 @@
 }
 
 /* Inline message emojis */
-span.c-emoji__medium {
-    height: 64px !important;
-    width: 64px !important;
-}
 span.c-emoji__medium img {
     height: 64px !important;
     width: 64px !important;
     margin-top: -32px !important;
 }
+span.c-emoji__medium {
+    height: 64px !important;
+    width: 64px !important;
+}
 
-/* Status custom emojis */
+/*
+    Status emojis
+*/
 .c-custom_status .c-emoji--inline img {
-    height: 26px !important;
-    width: 26px !important;
+    height: 24px !important;
+    width: 24px !important;
+    margin-top: -12px !important;
 }
+/* Statuses above messages clear */
 .c-message__sender .c-custom_status .c-emoji--inline img {
-    margin-top: -16px !important;
+    margin-top: -14px !important;
 }
-.p-channel_sidebar__name .c-custom_status .c-emoji--inline img {
-    margin-top: -13px !important;
-}
+/* Text next to status emoji doesn't collide */
 .c-custom_status .c-emoji--inline {
-    width: 26px !important;
+    height: 24px !important;
+    width: 24px !important;
 }
-.p-classic_nav__model__title__name__status--im .c-emoji--inline {
-    height: 25px !important;
-    width: 28px !important;
-}
-.p-classic_nav__model__title__name__status--im .c-emoji--inline img {
+/* Stauses in the channel sidebar */
+.p-channel_sidebar__name .c-emoji--inline img {
     height: 28px !important;
     width: 28px !important;
     margin-top: -15px !important;
 }
-.c-custom_status__tooltip .c-emoji--inline, .p-member_profile_field__value .c-custom_status--inline .c-emoji--inline {
-    height: 64px !important;
-    width: 64px !important;
+.p-channel_sidebar__name .c-emoji--inline {
+    height: 28px !important;
+    width: 28px !important;
 }
+
+/* Tooltip over a status and status of someone in the side info panel */
 .c-custom_status__tooltip .c-emoji--inline img, .p-member_profile_field__value .c-custom_status--inline .c-emoji--inline img {
     height: 64px !important;
     width: 64px !important;
     margin-top: -32px !important;
 }
+.c-custom_status__tooltip .c-emoji--inline, .p-member_profile_field__value .c-custom_status--inline .c-emoji--inline {
+    height: 64px !important;
+    width: 64px !important;
+}
+
+/* Make the tooltip big enough for thicccccccc emoji statuses */
 .c-custom_status__tooltip, .c-custom_status {
     vertical-align: bottom !important;
 }
@@ -61,11 +69,11 @@ span.c-emoji__medium img {
 }
 
 /* Send message custom status emojis*/
-.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium {
+.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium img {
     width: 32px !important;
     height: 32px !important;
 }
-.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium img {
+.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium {
     width: 32px !important;
     height: 32px !important;
 }
