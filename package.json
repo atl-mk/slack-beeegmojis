@@ -1,7 +1,7 @@
 {
     "name": "slack-beeegmojis",
     "scripts": {
-        "start:firefox": "web-ext run --source-dir ./common/ --start-url atlassian.slack.com"
+        "start:firefox": "web-ext run --source-dir ./common/ --start-url atlassian.slack.com",
     },
     "devDependencies": {
         "web-ext": "^4.2.0"
