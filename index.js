@@ -53,6 +53,13 @@ const injectOpenFile = path.resolve(injectFilesDir, '1.txt')
 const injectCloseFile = path.resolve(injectFilesDir, '2.txt')
 const originalAsarPath = path.resolve(slackDirectory, 'app.asar')
 
+console.info('Closing Slack')
+if (os.type === 'Windows_NT') {
+    // TODO need to get PID and process.kill()
+} else if (os.type() === 'Darwin' || os.type() === 'Linux') {
+    exec('pkill -9 slack')
+}
+
 if (commandLineOptions.BEEEEEG) {
     console.info("I like 'em BEEEEEG\nhttps://youtu.be/WJ1I-z0pBU0")
 }
