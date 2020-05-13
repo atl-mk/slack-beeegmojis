@@ -8,6 +8,7 @@ on:
 
 jobs:
   chromeDeploy:
+    name: "Deploy Chrome extension"
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +28,7 @@ jobs:
         refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
 
   firefoxDeploy:
-    name: "Firefox Build"
+    name: "Deploy Firefox extension"
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
