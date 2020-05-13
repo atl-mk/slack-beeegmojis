@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo 'need to add tests'",
-    "setup": "node index.js"
+    "setup": "node index.js",
+    "setup-BEEEEEG": "node index.js -b"
   },
   "bin": {
     "slack-beeegmojis": "index.js"
@@ -29,5 +30,8 @@
   "homepage": "https://github.com/mk-atlassian/slack-beeegmojis#readme",
   "devDependencies": {
     "np": "^6.2.3"
+  },
+  "dependencies": {
+    "command-line-args": "^5.1.1"
   }
 }
