@@ -18,14 +18,14 @@ const getSlackDirectoryOnWindows = () => {
   const getSlackVersions = (source) =>
     fs
       .readdirSync(source, { withFileTypes: true })
-      .filter((dirent) => dirent.isDirectory())
-      .map((dirent) => dirent.name)
-      .filter((dirent) => dirent.startsWith(appDirNamePrefix))
-      .map((dirent) => dirent.substring(appDirNamePrefix.length));
-  const versions = getSlackVersions(slackRootDir);
+      .filter((dir) => dir.isDirectory())
+      .map((dir) => dir.name)
+      .filter((dir) => dir.startsWith(appDirNamePrefix))
+      .map((dir) => dir.substring(appDirNamePrefix.length));
+  const slackVersions = getSlackVersions(slackRootDir);
 
   const getLatestVersionNumber = (versions) => semverSort.desc(versions)[0];
-  const latestVersionNumber = getLatestVersionNumber(versions);
+  const latestVersionNumber = getLatestVersionNumber(slackVersions);
 
   return path.resolve(
     slackRootDir,
