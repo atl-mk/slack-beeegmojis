@@ -1,11 +1,12 @@
 {
-    "name": "slack-beeegmojis",
-    "scripts": {
-        "web-ext:start": "web-ext run --source-dir ./common/ --start-url atlassian.slack.com",
-        "web-ext:lint": "web-ext lint --source-dir ./common/",
-        "web-ext:build": "web-ext build --source-dir ./common/ --overwrite-dest"
-    },
-    "devDependencies": {
-        "web-ext": "^4.2.0"
-    }
+  "name": "slack-beeegmojis",
+  "version": "0.6.2",
+  "scripts": {
+    "web-ext:start": "web-ext run --source-dir ./common/ --start-url atlassian.slack.com",
+    "web-ext:lint": "web-ext lint --source-dir ./common/",
+    "web-ext:build": "web-ext build --source-dir ./common/ --overwrite-dest"
+  },
+  "devDependencies": {
+    "web-ext": "^4.2.0"
+  }
 }
