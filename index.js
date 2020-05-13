@@ -5,10 +5,34 @@ const del = require("del");
 const fs = require("fs");
 const os = require("os");
 const path = require("path");
-const { exec } = require("child_process");
+const semverSort = require("semver-sort");
+const { execSync } = require("child_process");
 
 const optionDefinitions = [{ name: "BEEEEEG", alias: "b", type: Boolean }];
 const commandLineOptions = commandLineArgs(optionDefinitions);
+
+const getSlackDirectoryOnWindows = () => {
+  const slackRootDir = path.resolve(process.env.APPDATA, "..\\Local\\slack");
+  const appDirNamePrefix = "app-";
+
+  const getSlackVersions = (source) =>
+    fs
+      .readdirSync(source, { withFileTypes: true })
+      .filter((dirent) => dirent.isDirectory())
+      .map((dirent) => dirent.name)
+      .filter((dirent) => dirent.startsWith(appDirNamePrefix))
+      .map((dirent) => dirent.substring(appDirNamePrefix.length));
+  const versions = getSlackVersions(slackRootDir);
+
+  const getLatestVersionNumber = (versions) => semverSort.desc(versions)[0];
+  const latestVersionNumber = getLatestVersionNumber(versions);
+
+  return path.resolve(
+    slackRootDir,
+    `${appDirNamePrefix}${latestVersionNumber}`,
+    "resources"
+  );
+};
 
 const getSlackDirectory = () => {
   console.info("Figuring out where Slack is installed");
@@ -19,14 +43,12 @@ const getSlackDirectory = () => {
     case "Darwin":
       return path.resolve("/Applications/Slack.app/Contents/Resources/");
     case "Windows_NT":
-    // TODO need to write a way to figure out where the slack installation is placed
-    // set SLACK_VERSION=4.4.0
-    // set SLACK_DIR=%APPDATA%\..\Local\slack\app-%SLACK_VERSION%\resources\
+      return getSlackDirectoryOnWindows();
     default:
       console.error(
         `Sorry, this operating system (${os.type()}) is not supported yet, feel free to raise a ticket`
       );
-      process.exit(1);
+      process.exit(2);
   }
 };
 
@@ -56,10 +78,14 @@ const injectCloseFile = path.resolve(injectFilesDir, "2.txt");
 const originalAsarPath = path.resolve(slackDirectory, "app.asar");
 
 console.info("Closing Slack");
-if (os.type === "Windows_NT") {
-  // TODO need to get PID and process.kill()
+if (os.type() === "Windows_NT") {
+  try {
+    execSync("taskkill /F /IM slack.exe");
+  } catch {
+    console.warn("Couldn't close Slack, maybe it wasn't running?");
+  }
 } else if (os.type() === "Darwin" || os.type() === "Linux") {
-  exec("pkill -9 slack");
+  execSync("pkill -9 slack");
 }
 
 if (commandLineOptions.BEEEEEG) {

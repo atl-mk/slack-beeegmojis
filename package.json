@@ -37,6 +37,7 @@
   "dependencies": {
     "asar": "^3.0.3",
     "command-line-args": "^5.1.1",
-    "del": "^5.1.0"
+    "del": "^5.1.0",
+    "semver-sort": "0.0.4"
   }
 }
