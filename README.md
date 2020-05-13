@@ -1,6 +1,8 @@
 # Slack BEEEG emojis
 This is designed for Slack 4.4
 ## Installation
+### npx
+Run `npx slack-beeegmojis`
 ### Electron app (macOS, GNU+Linux, and Windows)
 Run either `setup` for the BEEEEEG version or `setup-beeeg-E-smolz` for the BEEG version
 ### Browsers (Firefox, Chrome, and Edge)

@@ -1,0 +1,27 @@
+{
+  "name": "slack-beeegmojis",
+  "version": "0.7.0",
+  "description": "Makes emojis in Slack bigger so you can actually appreciate them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'need to add tests'",
+    "setup": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-atlassian/slack-beeegmojis.git"
+  },
+  "keywords": [
+    "slack",
+    "emoji",
+    "emojis",
+    "big",
+    "bigger"
+  ],
+  "author": "mkem114",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mk-atlassian/slack-beeegmojis/issues"
+  },
+  "homepage": "https://github.com/mk-atlassian/slack-beeegmojis#readme"
+}
