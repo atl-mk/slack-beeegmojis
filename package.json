@@ -3,6 +3,9 @@
   "version": "0.9.0",
   "description": "Makes emojis in Slack bigger so you can actually appreciate them.",
   "main": "index.js",
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "prettier:ci": "prettier . --list-different",
     "prettier:fix": "prettier . --write",
