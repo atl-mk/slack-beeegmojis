@@ -1,0 +1,28 @@
+name: deployment
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  chromeDeploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Package extension
+      run: |
+        cd common
+        zip slack-beeegmojis.zip manifest.json slack-beeegmojis.css
+
+    - uses: trmcnvn/chrome-addon@v2
+      with:
+        extension: slack-beeegmojis
+        zip: common/slack-beeegmojis.zip
+        client-id: ${{ secrets.CHROME_CLIENT_ID }}
+        client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+        refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+
