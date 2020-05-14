@@ -4,13 +4,15 @@ This is designed for Slack 4.4
 
 ## Installation
 
-### npx
+### Desktop app (macOS, GNU+Linux, and Windows)
 
-Run `npx slack-beeegmojis` for the BEEG version or run `npx slack-beeegmojis -b` for the BEEEEEG version.
+#### npx (preferred method)
 
-### Electron app (macOS, GNU+Linux, and Windows)
+Run `npx slack-beeegmojis` for the BEEG version or run `npx slack-beeegmojis -b` for the BEEEEEG version
 
-Run either `setup` for the BEEEEEG version or `setup-beeeg-E-smolz` for the BEEG version
+#### shell script
+
+Run either `setup` for the BEEEEEG version or `setup-beeeg-E-smolz` for the BEEG version. If you're running macOS then it will help you by installing Homebrew and Node.js
 
 ### Browsers (Firefox, Chrome, and Edge)
 
