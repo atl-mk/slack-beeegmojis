@@ -78,14 +78,14 @@ const injectCloseFile = path.resolve(injectFilesDir, "2.txt");
 const originalAsarPath = path.resolve(slackDirectory, "app.asar");
 
 console.info("Closing Slack");
-if (os.type() === "Windows_NT") {
-  try {
-    execSync("taskkill /F /IM slack.exe");
-  } catch {
-    console.warn("Couldn't close Slack, maybe it wasn't running?");
+try {
+  if (os.type() === "Windows_NT") {
+      execSync("taskkill /F /IM slack.exe");
+  } else if (os.type() === "Darwin" || os.type() === "Linux") {
+    execSync("pkill -9 slack");
   }
-} else if (os.type() === "Darwin" || os.type() === "Linux") {
-  execSync("pkill -9 slack");
+} catch {
+  console.warn("Couldn't close Slack, maybe it wasn't running?");
 }
 
 if (commandLineOptions.BEEEEEG) {
