@@ -9,5 +9,10 @@
       "matches": ["*://*.slack.com/*"],
       "css": ["slack-beeeg-E-smolz.css"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{26b99005-860e-4ad3-8599-b4a7fc54284c}"
+    }
+  }
 }
