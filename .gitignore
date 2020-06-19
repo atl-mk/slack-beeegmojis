@@ -1,6 +1,7 @@
+.history
 .idea
 .iml
-web-ext-artifacts/
-.history
-node_modules
 common/slack-beeegmojis.zip
+node_modules
+slack-beeegmojis-*
+web-ext-artifacts/

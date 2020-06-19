@@ -1,6 +1,6 @@
 {
   "name": "slack-beeegmojis",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "Makes emojis in Slack bigger so you can actually appreciate them.",
   "main": "index.js",
   "engines": {
@@ -10,6 +10,7 @@
     "web-ext:start": "web-ext run --source-dir ./common/ --start-url atlassian.slack.com",
     "web-ext:lint": "web-ext lint --source-dir ./common/",
     "web-ext:build": "web-ext build --source-dir ./common/ --overwrite-dest",
+    "package:executables": "pkg .",
     "prettier:ci": "prettier . --list-different",
     "prettier:fix": "prettier . --write",
     "setup": "node index.js",
@@ -22,6 +23,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mk-atlassian/slack-beeegmojis.git"
+  },
+  "pkg": {
+    "scripts": "index.js",
+    "assets": [
+      "common/*.css",
+      "electron-hack/*"
+    ]
   },
   "keywords": [
     "slack",
@@ -38,6 +46,7 @@
   "homepage": "https://github.com/mk-atlassian/slack-beeegmojis#readme",
   "devDependencies": {
     "np": "^6.2.3",
+    "pkg": "^4.4.8",
     "prettier": "2.0.5"
   },
   "dependencies": {

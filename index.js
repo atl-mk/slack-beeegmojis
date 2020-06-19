@@ -8,12 +8,18 @@ const path = require("path");
 const semverSort = require("semver-sort");
 const { execSync } = require("child_process");
 
-const optionDefinitions = [{ name: "BEEEEEG", alias: "b", type: Boolean }];
+const optionDefinitions = [
+  { name: "BEEEEEG", alias: "b", type: Boolean },
+  { name: "debug", alias: "d", type: Boolean },
+];
 const commandLineOptions = commandLineArgs(optionDefinitions);
+
+const debug = (message) => commandLineOptions.debug && console.debug(message);
 
 const getSlackDirectoryOnWindows = () => {
   const slackRootDir = path.resolve(process.env.APPDATA, "..\\Local\\slack");
   const appDirNamePrefix = "app-";
+  debug(`Guessing the root slack directory is: ${slackRootDir}`);
 
   const getSlackVersions = (source) =>
     fs
@@ -23,9 +29,11 @@ const getSlackDirectoryOnWindows = () => {
       .filter((dir) => dir.startsWith(appDirNamePrefix))
       .map((dir) => dir.substring(appDirNamePrefix.length));
   const slackVersions = getSlackVersions(slackRootDir);
+  debug(`Detected Slack versions: ${slackVersions}`);
 
   const getLatestVersionNumber = (versions) => semverSort.desc(versions)[0];
   const latestVersionNumber = getLatestVersionNumber(slackVersions);
+  debug(`Believes the latest Slack version is: ${latestVersionNumber}`);
 
   return path.resolve(
     slackRootDir,
@@ -37,6 +45,7 @@ const getSlackDirectoryOnWindows = () => {
 const getSlackDirectory = () => {
   console.info("Figuring out where Slack is installed");
 
+  debug(`Detected operating system: ${os.type()}`);
   switch (os.type()) {
     case "Linux":
       return path.resolve("/usr/lib/slack/resources/");
@@ -53,6 +62,8 @@ const getSlackDirectory = () => {
 };
 
 const getStylesFileLocation = (BEEEEEG) => {
+  debug(`Wants BEEEEEG? ${BEEEEEG}`);
+
   const resolveStylesFile = (filename) => {
     const cssFileExtension = ".css";
     return path.resolve(SCRIPT_DIR, "common", `${filename}${cssFileExtension}`);
@@ -80,7 +91,7 @@ const originalAsarPath = path.resolve(slackDirectory, "app.asar");
 console.info("Closing Slack");
 try {
   if (os.type() === "Windows_NT") {
-      execSync("taskkill /F /IM slack.exe");
+    execSync("taskkill /F /IM slack.exe");
   } else if (os.type() === "Darwin" || os.type() === "Linux") {
     execSync("pkill -9 slack");
   }
@@ -117,6 +128,7 @@ const injectOpenData = fs.readFileSync(injectOpenFile);
 const stylesData = fs.readFileSync(stylesFile);
 const injectCloseData = fs.readFileSync(injectCloseFile);
 const appendStream = fs.createWriteStream(appendTarget, { flags: "a" });
+debug(`Attempting to inject styles into: ${appendTarget}`);
 appendStream.write(injectOpenData);
 appendStream.write(stylesData);
 appendStream.write(injectCloseData);
@@ -126,3 +138,6 @@ console.info("Removing packaged version of Slack");
 del.sync(originalAsarPath, { force: true });
 
 console.info("Done, have fun!");
+
+console.info("Will automatically close soon...");
+setTimeout(() => {}, 10000);
