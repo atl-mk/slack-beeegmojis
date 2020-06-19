@@ -2,9 +2,9 @@ name: Deployment
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   chromeDeploy:
@@ -12,21 +12,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: "Checkout"
-      uses: actions/checkout@v2
+      - name: "Checkout"
+        uses: actions/checkout@v2
 
-    - name: Package extension
-      run: |
-        cd common
-        zip slack-beeegmojis.zip manifest.json slack-beeegmojis.css
+      - name: Package extension
+        run: |
+          cd common
+          zip slack-beeegmojis.zip manifest.json slack-beeegmojis.css
 
-    - uses: trmcnvn/chrome-addon@v2
-      with:
-        extension: slack-beeegmojis
-        zip: common/slack-beeegmojis.zip
-        client-id: ${{ secrets.CHROME_CLIENT_ID }}
-        client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-        refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+      - uses: trmcnvn/chrome-addon@v2
+        with:
+          extension: slack-beeegmojis
+          zip: common/slack-beeegmojis.zip
+          client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
 
   firefoxDeploy:
     name: "Deploy Firefox extension"
@@ -56,15 +56,15 @@ jobs:
     name: "Publish to NPM"
     runs-on: ubuntu-latest
     steps:
-    - name: "Checkout"
-      uses: actions/checkout@master
+      - name: "Checkout"
+        uses: actions/checkout@master
 
-    - name: Set up Node.js
-      uses: actions/setup-node@master
-      with:
-        node-version: 10.0.0
-    - name: Publish if version has been updated
-      uses: pascalgn/npm-publish-action@4f4bf159e299f65d21cd1cbd96fc5d53228036df
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 10.0.0
+      - name: Publish if version has been updated
+        uses: pascalgn/npm-publish-action@4f4bf159e299f65d21cd1cbd96fc5d53228036df
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

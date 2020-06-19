@@ -29,11 +29,11 @@ const getSlackDirectoryOnWindows = () => {
       .filter((dir) => dir.startsWith(appDirNamePrefix))
       .map((dir) => dir.substring(appDirNamePrefix.length));
   const slackVersions = getSlackVersions(slackRootDir);
-  debug(`Detected Slack versions: ${slackVersions}`)
+  debug(`Detected Slack versions: ${slackVersions}`);
 
   const getLatestVersionNumber = (versions) => semverSort.desc(versions)[0];
   const latestVersionNumber = getLatestVersionNumber(slackVersions);
-  debug(`Believes the latest Slack version is: ${latestVersionNumber}`)
+  debug(`Believes the latest Slack version is: ${latestVersionNumber}`);
 
   return path.resolve(
     slackRootDir,
