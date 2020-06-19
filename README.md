@@ -6,6 +6,10 @@ This is designed for Slack 4.4
 
 ### Desktop app (macOS, GNU+Linux, and Windows)
 
+#### Run installer
+
+Download an installer from the latest release and run it.
+
 #### npx (preferred method)
 
 Run `npx slack-beeegmojis` for the BEEG version or run `npx slack-beeegmojis -b` for the BEEEEEG version
