@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/mk-atlassian/slack-beeegmojis#readme",
   "devDependencies": {
-    "np": "^6.2.3",
+    "np": "^6.3.2",
     "prettier": "2.0.5"
   },
   "dependencies": {
@@ -45,6 +45,6 @@
     "command-line-args": "^5.1.1",
     "del": "^5.1.0",
     "semver-sort": "0.0.4",
-    "web-ext": "^4.2.0"
+    "web-ext": "^4.3.0"
   }
 }
