@@ -18,9 +18,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Package extension
-       run: |
-         cd common
-         zip slack-beeegmojis.zip manifest.json slack-beeegmojis.css
+      run: |
+        cd common
+        zip slack-beeegmojis.zip manifest.json slack-beeegmojis.css
 
     - uses: trmcnvn/chrome-addon@v2
       with:
