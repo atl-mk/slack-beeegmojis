@@ -17,7 +17,7 @@ jobs:
     - name: Package extension
       run: |
         cd common
-        zip slack-beeegmojis.zip manifest.json slack-beeegmojis.css
+        zip slack-beeegmojis.zip manifest.json slack-beeeg-E-smolz.css
 
     - uses: trmcnvn/chrome-addon@v2
       with:
