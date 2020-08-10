@@ -1,6 +1,6 @@
 # Slack BEEEG emojis
 
-This is designed for Slack 4.4
+This is designed for Slack 4.8
 
 ## Installation
 
@@ -24,7 +24,7 @@ https://addons.mozilla.org/en-US/firefox/addon/slack-beeegmojis/
 
 https://microsoftedge.microsoft.com/addons/detail/dmeboaaoabeepmjadgaokkmkgoakkdib
 
-If you want to use the BEEEEEG version OR if you use chrome, but are not an Atlassian employee then you'll need to add an unpacked extension.
+If you want to use the BEEEEEG version then you'll need to use an unpacked extension.
 
 ## Contributions
 
