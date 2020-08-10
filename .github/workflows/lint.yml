@@ -15,7 +15,9 @@ jobs:
       run: |
         packageVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' package.json)
         manifestVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' common/manifest.json)
+        chromeManifestVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' chrome/manifest.json)
         [[ $packageVersion = $manifestVersion ]]
+        [[ $chromeManifestVersion = $manifestVersion ]]
 
   lintExtension:
     name: "Lint Firefox extension"
