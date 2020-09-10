@@ -1,6 +1,13 @@
+# IDE
 .idea
 .iml
-web-ext-artifacts/
 .history
+
+# Node.js
+web-ext-artifacts/
 node_modules
+
+# Builds
 common/slack-beeegmojis.zip
+chrome/slack-beeegmojis.zip
+chrome/slack-beeeg-E-smolz.css
