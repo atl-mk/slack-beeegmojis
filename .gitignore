@@ -4,10 +4,10 @@
 .history
 
 # Node.js
-web-ext-artifacts/
 node_modules
 
 # Builds
+web-ext-artifacts/
 common/slack-beeegmojis.zip
 chrome/slack-beeegmojis.zip
 chrome/slack-beeeg-E-smolz.css
