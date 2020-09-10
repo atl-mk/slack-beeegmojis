@@ -1,12 +1,12 @@
 {
   "name": "Slack Beeegmojis",
-  "version": "0.10.1",
+  "version": "0.10.3",
   "description": "Makes emojis in Slack bigger so you can actually appreciate them.",
   "manifest_version": 2,
-  "permissions": ["*://apps.slack.com/client/*"],
+  "permissions": ["*://app.slack.com/client/*"],
   "content_scripts": [
     {
-      "matches": ["*://apps.slack.com/client/*"],
+      "matches": ["*://app.slack.com/client/*"],
       "css": ["slack-beeeg-E-smolz.css"]
     }
   ],
