@@ -1,0 +1,114 @@
+/* Emoji message reactions */
+.c-reaction img.c-emoji__small {
+  height: 32px !important;
+  width: 32px !important;
+}
+
+/* Jumbo emojis */
+.c-message_kit__gutter__right img.c-emoji.c-emoji__large {
+  height: 48px !important;
+  width: 48px !important;
+}
+
+/* Inline message emojis */
+span.c-emoji__medium img {
+  height: 32px !important;
+  width: 32px !important;
+  margin-top: -16px !important;
+}
+span.c-emoji__medium {
+  height: 32px !important;
+  width: 32px !important;
+}
+
+/*
+    Status emojis
+*/
+.c-custom_status .c-emoji--inline img {
+  height: 24px !important;
+  width: 24px !important;
+  margin-top: -12px !important;
+}
+/* Statuses above messages clear */
+.c-message__sender .c-custom_status .c-emoji--inline img {
+  margin-top: -14px !important;
+}
+/* Text next to status emoji doesn't collide */
+.c-custom_status .c-emoji--inline {
+  height: 24px !important;
+  width: 24px !important;
+}
+/* Stauses in the channel sidebar */
+.p-channel_sidebar__name .c-emoji--inline img {
+  height: 28px !important;
+  width: 28px !important;
+  margin-top: -15px !important;
+}
+.p-channel_sidebar__name .c-emoji--inline {
+  height: 28px !important;
+  width: 28px !important;
+}
+
+/* Tooltip over a status and status of someone in the side info panel */
+.c-custom_status__tooltip .c-emoji--inline,
+.p-member_profile_field__value .c-custom_status--inline .c-emoji--inline {
+  height: 32px !important;
+  width: 32px !important;
+}
+.c-custom_status__tooltip .c-emoji--inline img,
+.p-member_profile_field__value .c-custom_status--inline .c-emoji--inline img {
+  height: 32px !important;
+  width: 32px !important;
+  margin-top: -16px !important;
+}
+/* Make the tooltip big enough for thicccccccc emoji statuses */
+.c-custom_status__tooltip,
+.c-custom_status {
+  vertical-align: bottom !important;
+}
+.c-tooltip__tip {
+  max-width: 1000px !important;
+}
+
+/* Send message custom status emojis*/
+.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium img {
+  width: 32px !important;
+  height: 32px !important;
+}
+.c-texty_input__placeholder .c-custom_status--inline .c-emoji__medium {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Draft message emojis */
+.c-texty_input .ql-editor img.emoji {
+  height: 32px !important;
+  width: 32px !important;
+}
+
+/* Sidebar channel section label */
+.p-channel_sidebar__section_heading .c-emoji img {
+  height: 22px !important;
+  width: 22px !important;
+  margin-top: -11px !important;
+}
+.p-channel_sidebar__section_heading span.c-emoji {
+  width: 22px !important;
+}
+
+/* Channel section selection dropdown label */
+.p-inline_channel_section .c-emoji img {
+  height: 22px !important;
+  width: 22px !important;
+  margin-top: -11px !important;
+}
+.p-inline_channel_section span.c-emoji {
+  width: 22px !important;
+}
+
+/* Emoji picker items emojis */
+.p-emoji_picker__list_item img.c-emoji__medium {
+  width: 28px;
+  height: 28px;
+  margin-top: -2px;
+}

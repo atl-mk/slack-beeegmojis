@@ -13,4 +13,8 @@ IF NOT ERRORLEVEL 0 (
     exit 1
 )
 
-call npx slack-beeegmojis
+IF "%1"=="" (
+    call node index.js -b
+) ELSE (
+    call node index.js %1
+)
