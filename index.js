@@ -11,6 +11,7 @@ const { execSync } = require("child_process");
 const optionDefinitions = [
   { name: "BEEEEEG", alias: "b", type: Boolean },
   { name: "smol", alias: "s", type: Boolean },
+  { name: "uninstall", alias: "u", type: Boolean },
 ];
 const commandLineOptions = commandLineArgs(optionDefinitions);
 
@@ -85,54 +86,110 @@ const injectOpenFile = path.resolve(injectFilesDir, "1.txt");
 const injectCloseFile = path.resolve(injectFilesDir, "2.txt");
 const originalAsarPath = path.resolve(slackDirectory, "app.asar");
 
-console.info("Closing Slack");
-try {
-  if (os.type() === "Windows_NT") {
-    execSync("taskkill /F /IM slack.exe");
-  } else if (os.type() === "Darwin" || os.type() === "Linux") {
-    execSync("pkill -9 slack");
+const closeSlack = () => {
+  console.info("Closing Slack");
+  try {
+    if (os.type() === "Windows_NT") {
+      execSync("taskkill /F /IM slack.exe");
+    } else if (os.type() === "Darwin" || os.type() === "Linux") {
+      execSync("pkill -9 slack");
+    }
+  } catch {
+    console.warn("Couldn't close Slack, maybe it wasn't running?");
   }
-} catch {
-  console.warn("Couldn't close Slack, maybe it wasn't running?");
-}
+};
 
-if (commandLineOptions.BEEEEEG && !commandLineOptions.smol) {
-  console.info("I like 'em BEEEEEG\nhttps://youtu.be/WJ1I-z0pBU0");
-} else if (commandLineOptions.BEEEEEG && commandLineOptions.smol) {
-  console.info("Some of the best memes are d̶e̶e̶p̶-̶f̶r̶i̶e̶d̶ are served medium-rare");
-}
+const displayMemeMessage = () => {
+  if (commandLineOptions.BEEEEEG && !commandLineOptions.smol) {
+    console.info("I like 'em BEEEEEG\nhttps://youtu.be/WJ1I-z0pBU0");
+  } else if (commandLineOptions.BEEEEEG && commandLineOptions.smol) {
+    console.info(
+      "Some of the best memes are d̶e̶e̶p̶-̶f̶r̶i̶e̶d̶ are served medium-rare"
+    );
+  }
+};
 
-if (fs.existsSync(appDirectory)) {
-  console.info("Cleaning up after last installation");
-  del.sync(appDirectory, { force: true });
-}
+const removeModifiedFiles = () => {
+  if (fs.existsSync(appDirectory)) {
+    console.info("Cleaning up after last installation");
+    del.sync(appDirectory, { force: true });
+  }
+};
 
-if (fs.existsSync(originalAsarPath)) {
+const originalPackagedFileExists = () => {
+  return fs.existsSync(originalAsarPath);
+};
+
+const backupPackagedFile = () => {
   if (fs.existsSync(backupAsarPath)) {
     console.info("Removing the old Slack backup");
     del.sync(backupAsarPath, { force: true });
   }
   console.info("Backing up Slack");
   fs.copyFileSync(originalAsarPath, backupAsarPath);
-} else {
-  console.info("Restoring from Slack backup");
+};
+
+const restorePackageFile = () => {
+  console.info("Restoring Slack from backup");
   fs.copyFileSync(backupAsarPath, originalAsarPath);
+};
+
+const unpackSlackFiles = () => {
+  console.info("Unpacking Slack app");
+  asar.extractAll(originalAsarPath, appDirectory);
+};
+
+const injectStyles = () => {
+  console.info("Chungus-ify-ing");
+  const injectOpenData = fs.readFileSync(injectOpenFile);
+  const stylesData = fs.readFileSync(stylesFile);
+  const injectCloseData = fs.readFileSync(injectCloseFile);
+  const appendStream = fs.createWriteStream(appendTarget, { flags: "a" });
+  appendStream.write(injectOpenData);
+  appendStream.write(stylesData);
+  appendStream.write(injectCloseData);
+  appendStream.end();
+};
+
+const removePackagedSlackFile = () => {
+  console.info("Removing packaged version of Slack");
+  del.sync(originalAsarPath, { force: true });
+};
+
+const displayDoneMessage = () => {
+  if (commandLineOptions.uninstall) {
+    console.info("Done!");
+  } else {
+    console.info("Done, have fun!");
+  }
+};
+
+const install = () => {
+  closeSlack();
+  displayMemeMessage();
+  removeModifiedFiles();
+  if (originalPackagedFileExists()) {
+    backupPackagedFile();
+  } else {
+    restorePackageFile();
+  }
+  unpackSlackFiles();
+  injectStyles();
+  removePackagedSlackFile();
+  displayDoneMessage();
+};
+
+const uninstall = () => {
+  closeSlack();
+  removeModifiedFiles();
+  if (!originalPackagedFileExists()) {
+    restorePackageFile();
+  }
+  displayDoneMessage();
+};
+
+if (!commandLineOptions.uninstall) {
+  install();
+} else {
+  uninstall();
 }
-
-console.info("Unpacking Slack app");
-asar.extractAll(originalAsarPath, appDirectory);
-
-console.info("Chungus-ify-ing");
-const injectOpenData = fs.readFileSync(injectOpenFile);
-const stylesData = fs.readFileSync(stylesFile);
-const injectCloseData = fs.readFileSync(injectCloseFile);
-const appendStream = fs.createWriteStream(appendTarget, { flags: "a" });
-appendStream.write(injectOpenData);
-appendStream.write(stylesData);
-appendStream.write(injectCloseData);
-appendStream.end();
-
-console.info("Removing packaged version of Slack");
-del.sync(originalAsarPath, { force: true });
-
-console.info("Done, have fun!");

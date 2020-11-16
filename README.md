@@ -26,6 +26,10 @@ https://microsoftedge.microsoft.com/addons/detail/dmeboaaoabeepmjadgaokkmkgoakkd
 
 If you want to use the BEEEEEG version then you'll need to use an unpacked extension.
 
+## Uninstall
+
+Run the `setup` script with `-u` to return Slack back to stock. 
+
 ## Contributions
 
 Raise a PR
