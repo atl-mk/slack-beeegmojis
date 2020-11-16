@@ -29,7 +29,7 @@ if ! npm version > /dev/null; then
 fi
 
 if [ -z "$1" ]; then
-    npx slack-beeegmojis -b
+    sudo node index.js -b
 else
-    npx slack-beeegmojis
+    sudo node index.js $1
 fi

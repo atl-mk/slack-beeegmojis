@@ -8,7 +8,10 @@ const path = require("path");
 const semverSort = require("semver-sort");
 const { execSync } = require("child_process");
 
-const optionDefinitions = [{ name: "BEEEEEG", alias: "b", type: Boolean }];
+const optionDefinitions = [
+  { name: "BEEEEEG", alias: "b", type: Boolean },
+  { name: "smol", alias: "s", type: Boolean },
+];
 const commandLineOptions = commandLineArgs(optionDefinitions);
 
 const getSlackDirectoryOnWindows = () => {
@@ -52,14 +55,16 @@ const getSlackDirectory = () => {
   }
 };
 
-const getStylesFileLocation = (BEEEEEG) => {
+const getStylesFileLocation = (BEEEEEG, smol) => {
   const resolveStylesFile = (filename) => {
     const cssFileExtension = ".css";
     return path.resolve(SCRIPT_DIR, "common", `${filename}${cssFileExtension}`);
   };
 
-  if (BEEEEEG) {
+  if (BEEEEEG && !smol) {
     return resolveStylesFile("slack-beeegmojis");
+  } else if (smol && !BEEEEEG) {
+    return resolveStylesFile("slack-smolbois");
   } else {
     return resolveStylesFile("slack-beeeg-E-smolz");
   }
@@ -67,7 +72,10 @@ const getStylesFileLocation = (BEEEEEG) => {
 
 const SCRIPT_DIR = __dirname;
 const slackDirectory = getSlackDirectory();
-const stylesFile = getStylesFileLocation(commandLineOptions.BEEEEEG);
+const stylesFile = getStylesFileLocation(
+  commandLineOptions.BEEEEEG,
+  commandLineOptions.smol
+);
 
 const appDirectory = path.resolve(slackDirectory, "app");
 const appendTarget = path.resolve(appDirectory, "dist/preload.bundle.js");
@@ -80,7 +88,7 @@ const originalAsarPath = path.resolve(slackDirectory, "app.asar");
 console.info("Closing Slack");
 try {
   if (os.type() === "Windows_NT") {
-      execSync("taskkill /F /IM slack.exe");
+    execSync("taskkill /F /IM slack.exe");
   } else if (os.type() === "Darwin" || os.type() === "Linux") {
     execSync("pkill -9 slack");
   }
@@ -88,8 +96,10 @@ try {
   console.warn("Couldn't close Slack, maybe it wasn't running?");
 }
 
-if (commandLineOptions.BEEEEEG) {
+if (commandLineOptions.BEEEEEG && !commandLineOptions.smol) {
   console.info("I like 'em BEEEEEG\nhttps://youtu.be/WJ1I-z0pBU0");
+} else if (commandLineOptions.BEEEEEG && commandLineOptions.smol) {
+  console.info("Some of the best memes are d̶e̶e̶p̶-̶f̶r̶i̶e̶d̶ are served medium-rare");
 }
 
 if (fs.existsSync(appDirectory)) {

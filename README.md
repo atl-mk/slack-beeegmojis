@@ -1,18 +1,18 @@
 # Slack BEEEG emojis
 
-This is designed for Slack 4.8
+This is designed for Slack 4.11
 
 ## Installation
 
 ### Desktop app (macOS, GNU+Linux, and Windows)
 
-#### npx (preferred method)
+#### script
 
-Run `npx slack-beeegmojis` for the BEEG version or run `npx slack-beeegmojis -b` for the BEEEEEG version
+Run either `setup` for the BEEEEEG version or `setup-beeeg-E-smolz` for the BEEG version or `setup-smol` for the smol version. If you're running macOS then it will help you by installing Homebrew and Node.js
 
-#### shell script
+#### npx (deprecated method)
 
-Run either `setup` for the BEEEEEG version or `setup-beeeg-E-smolz` for the BEEG version. If you're running macOS then it will help you by installing Homebrew and Node.js
+This method is unlikely to work because of the permissions needed to modify the Slack application files.
 
 ### Browsers (Firefox, Chrome, and Edge)
 
