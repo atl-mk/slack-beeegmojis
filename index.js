@@ -11,6 +11,7 @@ const { execSync } = require("child_process");
 const optionDefinitions = [
   { name: "BEEEEEG", alias: "b", type: Boolean },
   { name: "smol", alias: "s", type: Boolean },
+  { name: "uninstall", alias: "u", type: Boolean },
 ];
 const commandLineOptions = commandLineArgs(optionDefinitions);
 
@@ -117,7 +118,7 @@ const removeModifiedFiles = () => {
 
 const originalPackagedFileExists = () => {
   return fs.existsSync(originalAsarPath);
-}
+};
 
 const backupPackagedFile = () => {
   if (fs.existsSync(backupAsarPath)) {
@@ -129,7 +130,7 @@ const backupPackagedFile = () => {
 };
 
 const restorePackageFile = () => {
-  console.info("Restoring from Slack backup");
+  console.info("Restoring Slack from backup");
   fs.copyFileSync(backupAsarPath, originalAsarPath);
 };
 
@@ -156,18 +157,39 @@ const removePackagedSlackFile = () => {
 };
 
 const displayDoneMessage = () => {
-  console.info("Done, have fun!");
+  if (commandLineOptions.uninstall) {
+    console.info("Done!");
+  } else {
+    console.info("Done, have fun!");
+  }
 };
 
-closeSlack();
-displayMemeMessage();
-removeModifiedFiles();
-if (originalPackagedFileExists()) {
-  backupPackagedFile();
+const install = () => {
+  closeSlack();
+  displayMemeMessage();
+  removeModifiedFiles();
+  if (originalPackagedFileExists()) {
+    backupPackagedFile();
+  } else {
+    restorePackageFile();
+  }
+  unpackSlackFiles();
+  injectStyles();
+  removePackagedSlackFile();
+  displayDoneMessage();
+};
+
+const uninstall = () => {
+  closeSlack();
+  removeModifiedFiles();
+  if (!originalPackagedFileExists()) {
+    restorePackageFile();
+  }
+  displayDoneMessage();
+};
+
+if (!commandLineOptions.uninstall) {
+  install();
 } else {
-  restorePackageFile();
+  uninstall();
 }
-unpackSlackFiles();
-injectStyles();
-removePackagedSlackFile();
-displayDoneMessage();
