@@ -4,12 +4,12 @@ linkToInjectedStyles.rel = 'stylesheet';
 linkToInjectedStyles.type = 'text/css';
 document.head.appendChild(linkToInjectedStyles);
 
-const smolStylesUrl = browser.runtime.getURL('slack-smolbois.css');
-const beeegEsmolzStylesUrl = browser.runtime.getURL('slack-beeeg-E-smolz.css');
-const beeegStylesUrl = browser.runtime.getURL('slack-beeegmojis.css');
-
 const updateStyle = (size) => {
     console.log(`applying style: ${size}`);
+
+    const smolStylesUrl = chrome.runtime.getURL('/slack-smolbois.css');
+    const beeegEsmolzStylesUrl = chrome.runtime.getURL('/slack-beeeg-E-smolz.css');
+    const beeegStylesUrl = chrome.runtime.getURL('/slack-beeegmojis.css');
 
     switch (size) {
         case 'smolbois':
