@@ -12,5 +12,5 @@ common/slack-beeegmojis.zip
 chrome/slack-beeegmojis.zip
 chrome/*.css
 chrome/*.html
-chrome/*.jpg
 chrome/*.js
+chrome/*.png

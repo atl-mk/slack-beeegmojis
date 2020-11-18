@@ -3,6 +3,6 @@
 BASEDIR=$(dirname "$0")
 echo $BASEDIR
 
-cp $BASEDIR/../common/*.{css,html,jpg,js} $BASEDIR/
-zip $BASEDIR/slack-beeegmojis.zip $BASEDIR/manifest.json $BASEDIR/*.{css,js,jpg}
-rm $BASEDIR/*.{css,js,jpg}
+cp $BASEDIR/../common/*.{css,html,js,png} $BASEDIR/
+zip $BASEDIR/slack-beeegmojis.zip $BASEDIR/manifest.json $BASEDIR/*.{css,html,js,png}
+rm $BASEDIR/*.{css,html,js,png}
