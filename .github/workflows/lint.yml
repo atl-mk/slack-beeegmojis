@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: "Checkout"
-      uses: actions/checkout@v2
+      - name: "Checkout"
+        uses: actions/checkout@v2
 
-    - name: "compare version"
-      run: |
-        packageVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' package.json)
-        manifestVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' common/manifest.json)
-        chromeManifestVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' chrome/manifest.json)
-        [[ $packageVersion = $manifestVersion ]]
-        [[ $chromeManifestVersion = $manifestVersion ]]
+      - name: "compare version"
+        run: |
+          packageVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' package.json)
+          manifestVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' common/manifest.json)
+          chromeManifestVersion=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' chrome/manifest.json)
+          [[ $packageVersion = $manifestVersion ]]
+          [[ $chromeManifestVersion = $manifestVersion ]]
 
   lintExtension:
     name: "Lint Firefox extension"
@@ -34,3 +34,15 @@ jobs:
           cmd: lint
           source: common
           channel: listed
+
+  prettierCheck:
+    name: "Prettier Check"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prettier
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - run: npm install
+      - run: npm run prettier:ci
