@@ -1,3 +1,4 @@
 .history
 .idea
+common/browser-polyfill.min.js
 package-lock.json

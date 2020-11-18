@@ -25,20 +25,10 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://app.slack.com/client/*"
-      ],
-      "js": [
-        "browser-polyfill.min.js",
-        "extension-change-size.js"
-      ]
+      "matches": ["*://app.slack.com/client/*"],
+      "js": ["browser-polyfill.min.js", "extension-change-size.js"]
     }
   ],
-  "permissions": [
-    "*://app.slack.com/client/*",
-    "storage"
-  ],
-  "web_accessible_resources": [
-    "*.css"
-  ]
+  "permissions": ["*://app.slack.com/client/*", "storage"],
+  "web_accessible_resources": ["*.css"]
 }
