@@ -28,7 +28,7 @@ If you want to use the BEEEEEG version then you'll need to use an unpacked exten
 
 ## Uninstall
 
-Run the `setup` script with `-u` to return Slack back to stock. 
+Run the `setup` script with `-u` to return Slack back to stock.
 
 ## Contributions
 

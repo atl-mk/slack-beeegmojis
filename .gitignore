@@ -10,4 +10,7 @@ node_modules
 web-ext-artifacts/
 common/slack-beeegmojis.zip
 chrome/slack-beeegmojis.zip
-chrome/slack-beeeg-E-smolz.css
+chrome/*.css
+chrome/*.html
+chrome/*.js
+chrome/*.png
