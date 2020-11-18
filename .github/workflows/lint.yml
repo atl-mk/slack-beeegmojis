@@ -34,4 +34,3 @@ jobs:
           cmd: lint
           source: common
           channel: listed
-
