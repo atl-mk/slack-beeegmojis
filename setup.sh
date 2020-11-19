@@ -28,6 +28,8 @@ if ! npm version > /dev/null; then
     fi
 fi
 
+npm install
+
 if [ -z "$1" ]; then
     sudo node index.js -b
 else

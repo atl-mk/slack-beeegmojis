@@ -13,6 +13,8 @@ IF NOT ERRORLEVEL 0 (
     exit 1
 )
 
+npm install
+
 IF "%1"=="" (
     call node index.js -b
 ) ELSE (
