@@ -4,7 +4,7 @@
   "description": "Makes emojis in Slack bigger so you can actually appreciate them.",
   "main": "index.js",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "scripts": {
     "web-ext:start": "web-ext run --source-dir ./common/ --start-url atlassian.slack.com",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mk-atlassian/slack-beeegmojis.git"
+    "url": "git+https://github.com/atl-mk/slack-beeegmojis.git"
   },
   "keywords": [
     "slack",
@@ -33,18 +33,18 @@
   "author": "mkem114",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mk-atlassian/slack-beeegmojis/issues"
+    "url": "https://github.com/atl-mk/slack-beeegmojis/issues"
   },
-  "homepage": "https://github.com/mk-atlassian/slack-beeegmojis#readme",
+  "homepage": "https://github.com/atl-mk/slack-beeegmojis#readme",
   "devDependencies": {
-    "np": "^6.3.2",
-    "prettier": "2.0.5",
-    "web-ext": "^4.3.0"
+    "np": "^5.1.3",
+    "prettier": "^2.4.1",
+    "web-ext": "^0.0.1"
   },
   "dependencies": {
-    "asar": "^3.0.3",
-    "command-line-args": "^5.1.1",
-    "del": "^5.1.0",
-    "semver-sort": "0.0.4"
+    "asar": "^3.1.0",
+    "command-line-args": "^5.2.0",
+    "del": "^6.0.0",
+    "semver-sort": "^0.0.4"
   }
 }

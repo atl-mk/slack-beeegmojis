@@ -1,6 +1,6 @@
 # Slack BEEEG emojis
 
-This is designed for Slack 4.11
+This is designed for Slack >= 4.22
 
 ## Installation
 

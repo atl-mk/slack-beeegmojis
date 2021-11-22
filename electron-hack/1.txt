@@ -1,6 +1,6 @@
 
 
-// BEEEGMOJIS
+// slack-beeegmojis
 document.addEventListener('DOMContentLoaded', function() {
 var BEEEGMOJIS = document.createElement("style");
 document.head.appendChild(BEEEGMOJIS);
