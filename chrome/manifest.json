@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Slack Beeegmojis",
-  "version": "0.12.1",
+  "version": "0.13.0",
   "description": "Makes emojis in Slack bigger so you can actually appreciate them.",
   "homepage_url": "https://github.com/atl-mk/slack-beeegmojis",
   "icons": {
