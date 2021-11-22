@@ -10,7 +10,7 @@
     "web-ext:start": "web-ext run --source-dir ./common/ --start-url atlassian.slack.com",
     "web-ext:lint": "web-ext lint --source-dir ./common/",
     "web-ext:build": "web-ext build --source-dir ./common/ --overwrite-dest",
-    "prettier:ci": "prettier . --check",
+    "prettier:ci": "prettier . --list-different",
     "prettier:fix": "prettier . --write",
     "setup": "node index.js",
     "setup-BEEEEEG": "node index.js -b",
