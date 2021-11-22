@@ -139,6 +139,11 @@ const unpackSlackFiles = () => {
   asar.extractAll(originalAsarPath, appDirectory);
 };
 
+const packageSlackFiles = () => {
+  console.info("Re-packaging Slack app");
+  asar.createPackage(appDirectory, originalAsarPath);
+};
+
 const injectStyles = () => {
   console.info("Chungus-ify-ing");
   const injectOpenData = fs.readFileSync(injectOpenFile);
@@ -176,12 +181,14 @@ const install = () => {
   unpackSlackFiles();
   injectStyles();
   removePackagedSlackFile();
+  packageSlackFiles();
   displayDoneMessage();
 };
 
 const uninstall = () => {
   closeSlack();
   removeModifiedFiles();
+  removePackagedSlackFile();
   if (!originalPackagedFileExists()) {
     restorePackageFile();
   }
