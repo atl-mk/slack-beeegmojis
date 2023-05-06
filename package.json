@@ -44,6 +44,6 @@
     "asar": "^3.1.0",
     "command-line-args": "^5.2.0",
     "del": "^6.0.0",
-    "semver-sort": "^0.0.4"
+    "semver-sort": "^1.0.0"
   }
 }
